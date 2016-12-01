@@ -70,7 +70,7 @@
         showEmail.innerHTML = emailCounter;
         counter.appendChild(showEmail);
 
-        //
+        // OBJECTIVE (6) SETTING THE RECURRING FUNCTION TO PULL NEW EMAILS
         function getNewEmail(){
       		var newEmails = getNewMessage();
       		window.geemails.push(newEmails);
@@ -106,15 +106,29 @@
     		//THIS FOR-LOOP WILL ADD THE EVENT LISTENER TO THE BODY OF THE NEW EMAILS
     		var showMessage = document.getElementsByClassName("date");
     		for(var j = 0; j<showMessage.length; j++){
-      			console.log(showMessage[j]);
+      			//console.log(showMessage[j]);
     			showMessage[j].addEventListener("click", readEmail);
     		}
+    		//this function will find the number of emails in the inbox
+        	var newEmailCounter = 0;
+        	function showNumberEmails(emails){
+          		for (var k = 0; k<emails.length; k++){
+            		emailCounter = emails.length;
+          		}
+        	}
+        	//INVOKING THE FUNCTION
+        	showNumberEmails(window.geemails);
+        	//console.log(emailCounter);
+
+        	//ADDING NEW NUMBER OF EMAILS TO THE PAGE
+        	var showEmail = document.getElementById("counter");
+        	showEmail.className = "count";
+        	showEmail.innerHTML = emailCounter;
     
     	} 
     	setInterval(getNewEmail, 7000);
-
         
-     	};
+     };
     </script>
 	</head>
 	<body>
