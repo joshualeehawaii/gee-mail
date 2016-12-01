@@ -1,0 +1,20 @@
+body{
+
+}
+#header{
+	background-color: ;
+}
+#user{
+	float: right;
+	padding: 25px;
+}
+#userInfo{
+	text-align: center;
+	background-color: blue;
+	padding: 20px;
+}
+li{
+	display: inline;
+	padding: 50px;
+
+}
