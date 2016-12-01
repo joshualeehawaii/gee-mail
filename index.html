@@ -42,7 +42,7 @@
     	//OBJECTIVE (4) CONT. ADDING THE EVENT LISTNER TO SHOW/HIDE EAMAIL CONTENT WHEN CLICKED ON
 		var showMessage = document.getElementsByClassName("date");
 		for(var j = 0; j<showMessage.length; j++){
-  		console.log(showMessage[j]);
+  		//console.log(showMessage[j]);
 			showMessage[j].addEventListener("click", readEmail);   
 		}
 
@@ -55,8 +55,62 @@
     			}
     	}
 
-    	//ADDING THE INBOX COUNTER TO THE PAGE
-    	 
+    	//OBJECTIVE (5) ADDING THE INBOX COUNTER TO THE PAGE
+        var emailCounter = 0;
+        function showNumberEmails(emails){
+        	for (var k = 0; k<emails.length; k++){
+        		emailCounter = emails.length;
+        	}
+        }
+        showNumberEmails(window.geemails);
+        //console.log(emailCounter);
+
+        var showEmail = document.createElement("div");
+        showEmail.className = "count";
+        showEmail.innerHTML = emailCounter;
+        counter.appendChild(showEmail);
+
+        //
+        function getNewEmail(){
+      		var newEmails = getNewMessage();
+      		window.geemails.push(newEmails);
+      		document.getElementById("counter").innerHTML = emailCounter;
+      		//console.log(emailCounter); 
+      		//console.log(newEmails);
+      		//console.log(newEmails.date);
+      		//console.log(newEmails.subject);
+      		//console.log(newEmails.sender);
+      		//console.log(newEmails.body);
+
+      		var emailDateNew = document.createElement("div");
+      		emailDate.className = "date";
+      		emailDateNew.innerHTML = newEmails.date;
+      		main.appendChild(emailDateNew);
+
+      		var emailSenderNew = document.createElement("div");
+      		emailSender.className = "from";
+      		emailSenderNew.innerHTML = newEmails.sender;
+      		emailDateNew.appendChild(emailSenderNew);
+
+      		var emailSubjectNew = document.createElement("div");
+      		emailSubjectNew.className = "info";
+      		emailSubjectNew.innerHTML = newEmails.subject;
+      		emailDateNew.appendChild(emailSubjectNew);
+
+      		var emailBodyNew = document.createElement("div");
+      		emailBodyNew.className = "read";
+      		emailBodyNew.innerHTML = newEmails.body;
+      		emailBodyNew.style.display = "none";
+      		emailDateNew.appendChild(emailBody);
+
+    		//THIS FOR-LOOP WILL ADD THE EVENT LISTENER TO THE BODY OF THE NEW EMAILS
+    		var showMessage = document.getElementsByClassName("date");
+    		for(var j = 0; j<showMessage.length; j++){
+      		//console.log(showMessage[j]);
+    		showMessage[j].addEventListener("click", readEmail);
+    	}
+    
+    } 
 
 
         
@@ -64,6 +118,7 @@
     </script>
 	</head>
 	<body>
+		<div id="counter"></div>
 		<div class="container" id="main">
 			Build Me!
 		</div>
