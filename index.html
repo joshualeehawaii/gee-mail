@@ -109,7 +109,6 @@
       			//console.log(showMessage[j]);
     			showMessage[j].addEventListener("click", readEmail);
     		}
-    		//this function will find the number of emails in the inbox
         	var newEmailCounter = 0;
         	function showNumberEmails(emails){
           		for (var k = 0; k<emails.length; k++){
@@ -132,6 +131,18 @@
     </script>
 	</head>
 	<body>
+		<div id="header">
+			<img id="logo" src="/photos/Death Star-logo.png" alt="oops" style="width: 500px">
+			<img id="user" src="/photos/user.jpg" alt="oops" style="width: 100px">
+			<div id="userInfo">
+				<ul>
+					<li>text</li>
+					<li>text</li>
+					<li>text</li>
+				</ul>
+			</div>
+			
+		</div>
 		<div id="counter"></div>
 		<div class="container" id="main"></div>
 	</body>
