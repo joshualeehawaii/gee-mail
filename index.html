@@ -74,7 +74,7 @@
         function getNewEmail(){
       		var newEmails = getNewMessage();
       		window.geemails.push(newEmails);
-      		document.getElementById("counter").innerHTML = emailCounter;
+      		//document.getElementById("counter").innerHTML = emailCounter;
       		//console.log(emailCounter); 
       		//console.log(newEmails);
       		//console.log(newEmails.date);
@@ -82,36 +82,36 @@
       		//console.log(newEmails.sender);
       		//console.log(newEmails.body);
 
-      		var emailDateNew = document.createElement("div");
+      		var emailDate = document.createElement("div");
       		emailDate.className = "date";
-      		emailDateNew.innerHTML = newEmails.date;
-      		main.appendChild(emailDateNew);
+      		emailDate.innerHTML = newEmails.date;
+      		main.appendChild(emailDate);
 
-      		var emailSenderNew = document.createElement("div");
+      		var emailSender = document.createElement("div");
       		emailSender.className = "from";
-      		emailSenderNew.innerHTML = newEmails.sender;
-      		emailDateNew.appendChild(emailSenderNew);
+      		emailSender.innerHTML = newEmails.sender;
+      		emailDate.appendChild(emailSender);
 
-      		var emailSubjectNew = document.createElement("div");
-      		emailSubjectNew.className = "info";
-      		emailSubjectNew.innerHTML = newEmails.subject;
-      		emailDateNew.appendChild(emailSubjectNew);
+      		var emailSubject = document.createElement("div");
+      		emailSubject.className = "info";
+      		emailSubject.innerHTML = newEmails.subject;
+      		emailDate.appendChild(emailSubject);
 
-      		var emailBodyNew = document.createElement("div");
-      		emailBodyNew.className = "read";
-      		emailBodyNew.innerHTML = newEmails.body;
-      		emailBodyNew.style.display = "none";
-      		emailDateNew.appendChild(emailBody);
+      		var emailBody = document.createElement("div");
+      		emailBody.className = "read";
+      		emailBody.innerHTML = newEmails.body;
+      		emailBody.style.display = "none";
+      		emailDate.appendChild(emailBody);
 
     		//THIS FOR-LOOP WILL ADD THE EVENT LISTENER TO THE BODY OF THE NEW EMAILS
     		var showMessage = document.getElementsByClassName("date");
     		for(var j = 0; j<showMessage.length; j++){
-      		//console.log(showMessage[j]);
-    		showMessage[j].addEventListener("click", readEmail);
-    	}
+      			console.log(showMessage[j]);
+    			showMessage[j].addEventListener("click", readEmail);
+    		}
     
-    } 
-
+    	} 
+    	setInterval(getNewEmail, 7000);
 
         
      	};
