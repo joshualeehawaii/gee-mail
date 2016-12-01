@@ -8,7 +8,7 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-        //OBJECTIVE (3) MAKING A VISUAL LIST OF THE INTIAL 10 EAMILS
+        //OBJECTIVE (4) MAKING A VISUAL LIST OF THE INTIAL 10 EAMILS
         for (var i = 0; i<window.geemails.length; i++){
         	//console.log(window.geemails);
         	//console.log(window.geemails[i]);
@@ -17,31 +17,50 @@
         	//console.log(window.geemails[i].sender);
         	//console.log(window.geemails[i].body);
 
-          var emailDate = document.createElement("div");
-          emailDate.className = "date";
-          emailDate.innerHTML = window.geemails[i].date;
-          main.appendChild(emailDate);
+          	var emailDate = document.createElement("div");
+          	emailDate.className = "date";
+          	emailDate.innerHTML = window.geemails[i].date;
+          	main.appendChild(emailDate);
 
-          var emailSender = document.createElement("div");
-          emailSender.className = "from";
-          emailSender.innerHTML = window.geemails[i].sender;
-          emailDate.appendChild(emailSender);
+          	var emailSender = document.createElement("div");
+          	emailSender.className = "from";
+          	emailSender.innerHTML = window.geemails[i].sender;
+          	emailDate.appendChild(emailSender);
 
-          var emailSubject = document.createElement("div");
-          emailSubject.className = "info";
-          emailSubject.innerHTML = window.geemails[i].subject;
-          emailDate.appendChild(emailSubject);
+          	var emailSubject = document.createElement("div");
+          	emailSubject.className = "info";
+          	emailSubject.innerHTML = window.geemails[i].subject;
+          	emailDate.appendChild(emailSubject);
 
-          var emailBody = document.createElement("div");
-          emailBody.className = "read";
-          emailBody.innerHTML = window.geemails[i].body;
-          emailBody.style.display = "none";
-          emailDate.appendChild(emailBody);
+          	var emailBody = document.createElement("div");
+          	emailBody.className = "read";
+          	emailBody.innerHTML = window.geemails[i].body;
+          	emailBody.style.display = "none";
+          	emailDate.appendChild(emailBody);
     	}
+
+    	//OBJECTIVE (4) CONT. ADDING THE EVENT LISTNER TO SHOW/HIDE EAMAIL CONTENT WHEN CLICKED ON
+		var showMessage = document.getElementsByClassName("date");
+		for(var j = 0; j<showMessage.length; j++){
+  		console.log(showMessage[j]);
+			showMessage[j].addEventListener("click", readEmail);   
+		}
+
+		function readEmail(){
+ 			var emailContent = this.querySelectorAll(".read")[0];
+  				if (emailContent.style.display === "none"){
+    				emailContent.style.display = "block";
+  				}else{
+    			emailContent.style.display = "none";
+    			}
+    	}
+
+    	//ADDING THE INBOX COUNTER TO THE PAGE
+    	 
 
 
         
-      };
+     	};
     </script>
 	</head>
 	<body>
