@@ -7,6 +7,39 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+
+        //OBJECTIVE (3) MAKING A VISUAL LIST OF THE INTIAL 10 EAMILS
+        for (var i = 0; i<window.geemails.length; i++){
+        	//console.log(window.geemails);
+        	//console.log(window.geemails[i]);
+        	//console.log(window.geemails[i].date);
+        	//console.log(window.geemails[i].subject);
+        	//console.log(window.geemails[i].sender);
+        	//console.log(window.geemails[i].body);
+
+          var emailDate = document.createElement("div");
+          emailDate.className = "date";
+          emailDate.innerHTML = window.geemails[i].date;
+          main.appendChild(emailDate);
+
+          var emailSender = document.createElement("div");
+          emailSender.className = "from";
+          emailSender.innerHTML = window.geemails[i].sender;
+          emailDate.appendChild(emailSender);
+
+          var emailSubject = document.createElement("div");
+          emailSubject.className = "info";
+          emailSubject.innerHTML = window.geemails[i].subject;
+          emailDate.appendChild(emailSubject);
+
+          var emailBody = document.createElement("div");
+          emailBody.className = "read";
+          emailBody.innerHTML = window.geemails[i].body;
+          emailBody.style.display = "none";
+          emailDate.appendChild(emailBody);
+    	}
+
+
         
       };
     </script>
