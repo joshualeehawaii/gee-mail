@@ -2,6 +2,9 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<title>Death Star Internal Communications System</title>
     <script>
       window.onload = function(){
@@ -125,7 +128,7 @@
         	showEmail.innerHTML = emailCounter;
     
     	} 
-    	//setInterval(getNewEmail, 7000);
+    	setInterval(getNewEmail, 7000);
         
      };
     </script>
@@ -136,15 +139,15 @@
 			<img id="user" src="/photos/user.jpg" alt="oops" style="width: 100px">
 			<div id="userInfo">
 				<ul>
-					<li>text</li>
-					<li>text</li>
-					<li>text</li>
+					<li><img src="/photos/Inbox.png" alt="oops" style="width: 50px;"></li>
+					<li><img src="/photos/Compose.png" alt="oops" style="width: 50px;"></li>
+					<li>You Are Logged In As: FN-1287</li>
 				</ul>
 			</div>
-			
 		</div>
-		<div id="counter">Inbox:</div>
+    <div id="inbox">Inbox:</div>
+		<div id="counter"></div>
 		<div class="container" id="main"></div>
-		<div id="footer"><footer>here is some text</footer></div>
+		<div id="footer"><footer><img src="/photos/Storm Trooper.png" alt="oops" style="width: 200px"></footer></div>
 	</body>
 </html>
