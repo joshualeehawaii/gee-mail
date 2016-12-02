@@ -1,9 +1,9 @@
 body{
-	background-color: #ECEFF1;
+	background-color: #E0E0E0;
 }
 #header{
-	background-color: #CFD8DC;
-	box-shadow: 3px 3px 3px;
+	background-color: #B0BEC5;
+	box-shadow: 4px 4px 4px;
 }
 #user{
 	float: right;
@@ -13,28 +13,50 @@ body{
 	text-align: center;
 	background-color: #37474F;
 	padding: 20px;
-	box-shadow: 2px 2px 2px;
+	box-shadow: 4px 4px 4px;
 	margin-bottom: 3px;
 }
 li{
 	display: inline;
-	padding: 50px;
+	padding: 100px;
+	font-family: 'Inconsolata', monospace;
+	font-size: 35;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+#inbox{
+	font-family: 'Bungee', cursive;
+	font-size: 20;
+	margin-top: 30px;
+	color: #004D40;
 }
 #counter{
 	padding: 10px;
+	font-size: 30;
 }
 .date{
 	background-color: #BDBDBD;
 	box-shadow: 3px 3px 3px;
 	margin-bottom: 7px;
+	padding: 5px;
+	font-family: 'Neuton', serif;
+	font-size: 17;
+	color: #263238;
 }
 .from{
 	padding: 2px;
+	font-size: 22;
+	color: #006064;
 }
 .info{
 	padding: 2px;
+	font-size: 20;
+}
+.read{
+	font-size: 20;
 }
 #footer{
 	background-color: #263238;
 	text-align: center;
+	box-shadow: 4px 4px 4px;
 }
