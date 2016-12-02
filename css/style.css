@@ -1,8 +1,9 @@
 body{
-
+	background-color: #ECEFF1;
 }
 #header{
-	background-color: ;
+	background-color: #CFD8DC;
+	box-shadow: 3px 3px 3px;
 }
 #user{
 	float: right;
@@ -10,15 +11,30 @@ body{
 }
 #userInfo{
 	text-align: center;
-	background-color: blue;
+	background-color: #37474F;
 	padding: 20px;
+	box-shadow: 2px 2px 2px;
+	margin-bottom: 3px;
 }
 li{
 	display: inline;
 	padding: 50px;
-
+}
+#counter{
+	padding: 10px;
+}
+.date{
+	background-color: #BDBDBD;
+	box-shadow: 3px 3px 3px;
+	margin-bottom: 7px;
+}
+.from{
+	padding: 2px;
+}
+.info{
+	padding: 2px;
 }
 #footer{
-	background-color: blue;
+	background-color: #263238;
 	text-align: center;
 }
